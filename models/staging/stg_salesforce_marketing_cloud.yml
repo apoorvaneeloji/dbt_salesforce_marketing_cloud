@@ -118,6 +118,7 @@ models:
             - source_relation
             - link_id
             - send_id
+            - id
     columns:
       - name: source_relation
         description: '{{ doc("source_relation") }}'

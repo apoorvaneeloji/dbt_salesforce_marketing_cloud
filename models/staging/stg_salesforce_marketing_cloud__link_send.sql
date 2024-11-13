@@ -27,8 +27,10 @@ final as (
     
     select 
         source_relation,
+        cast(id as {{ dbt.type_string() }}) as id,
         cast(link_id as {{ dbt.type_string() }}) as link_id,
-        cast(send_id as {{ dbt.type_string() }}) as send_id
+        cast(send_id as {{ dbt.type_string() }}) as send_id,
+
     from fields
     where not coalesce(_fivetran_deleted, false)
 )
